@@ -11,24 +11,26 @@ const GlobalStyle = createGlobalStyle`
 
 export const Button = styled.button`
     border-radius: 4px;
-    padding: 10px 20px;
-    background: ${({ primary }) => (primary ? '#fff' : 'transparent')};
-    font-size: 20px;
-    color: ${({ primary }) => (primary ? '#242424' : '#fff')};
-    outline: none;
-    border: 1px solid #fff;
-    cursor: pointer;
+    background: transparent;
+    padding: ${({ big }) => (big ? '16px 20px' : '10px 25px')};
+    font-size: ${({ fontBig }) => (fontBig ? '20px' : '25px')};
+    color: #fff;
     white-space: nowrap;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
 
     &:hover {
+        transition: all 0.3s ease-out;
         background: #fff;
         color: #242424;
-        transition: all 0.3s ease-out;
-
-        @media screen and (max-width: 960px) {
-             width: 100%;
-         }
-    }
+    } 
+    
+    @media screen and (max-width: 960px) {
+        width: 100%;
+             
+     }
 `
 
 export default GlobalStyle;

@@ -89,21 +89,22 @@ export const NavMenu = styled.ul`
         flex-direction: column;
         width: 100%;
         height: 90vh;
-        position: absolute;
         top: 80px;
-        /* left: 0; */
-        left: -100%;
-        opacity: 1;
+        left: ${({ click }) => (click ? 0 : '-100%')};
         transition: all 0.5s ease;
+        position: absolute;
+        opacity: 1;
+        background-color: #292f36;
+        
+        &:active{
+             background: #242222;
+             left: 0;
+             opacity: 1;
+             transition: all 0.5s ease;
+             z-index: 1;
+    }
     }
 
-    &:active{
-        background: #242222;
-         left: 0;
-         opacity: 1;
-         transition: all 0.5s ease;
-         z-index: 1;
-    }
 `;
 
 export const NavItem = styled.li`
@@ -130,21 +131,14 @@ export const NavLink = styled(Link)`
     }
 
     @media screen and (max-width: 960px){
+        display: table;
         text-align: center;
-         padding: 2rem;
-         width: 100%;
-         display: table;
-        /* display: block;
-        background-color: #242424;
-        text-align: center;
-        margin: 2rem auto;
+        width: 100%;
+        padding: 16px 20px;
         border-radius: 4px;
-        width: 80%;
-        text-decoration: none;
         font-size: 1.5rem;
-        padding: 14px 20px;
-        border: 1px solid #fff;
-        transition: all 0.3s ease-out; */
+        margin: 2rem auto;
+        transition: all 0.3s ease-out;
 
         &:hover{
             background-color: #fff;
@@ -160,32 +154,29 @@ export const NavBtnLink = styled(Link)`
     margin: 1rem auto;
     width: 80%;
     text-decoration: none;
-    font-size: 1.5rem;
-    background-color: transparent;
     transition: all 0.3s ease-in-out;
 
-    @media screen and (max-width: 960px){
-        display: block;
-      text-align: center;
-      margin: 2rem auto;
-      border-radius: 4px;
-      width: 80%;
-      text-decoration: none;
-      font-size: 1.5rem;
-      background-color: transparent;
-      color: #fff;
-      padding: 14px 20px;
-      border: 1px solid #fff;
-      transition: all 0.3s ease-out;
 
-      &:hover{
-        background: #fff;
-      color: #242424;
-      transition: 250ms;
+
+    @media screen and (max-width: 960px){
+        display: table;
+        text-align: center;
+        width: 100%;
+        border-radius: 4px;
+        font-size: 2rem;
+        margin: 1.8rem auto;
+        transition: all 0.3s ease-out;
+        
+        &:hover{
+            background: #fff;
+            color: #242424;
+            border-radius: 0;
+        }
       }
-    }
+    
 
 `;
+
 
 
 

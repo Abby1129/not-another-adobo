@@ -13,7 +13,6 @@ import {
     IconLogo,
     Bars,
     Times,
-    NavH1
 } from './NavbarElements';
 
 const Navbar = () => {
@@ -48,7 +47,7 @@ const Navbar = () => {
                     <MenuIcon onClick={handleClick}>
                         {click ? <Times /> : <Bars />}
                     </MenuIcon>
-                    <NavMenu onClick={handleClick} activeStyle>
+                    <NavMenu onClick={handleClick} click={click} activeStyle>
                         <NavItem>
                             <NavLink to='/'>
                                 Home
@@ -72,13 +71,13 @@ const Navbar = () => {
                         <NavItem>
                             {button ? (
                                 <NavBtnLink to='/subscribe'>
-                                    <Button big>
+                                    <Button fontBig>
                                         Subscribe
                                   </Button>
                                 </NavBtnLink>
                             ) : (
                                 <NavBtnLink to='/subscribe'>
-                                    <Button primary>
+                                    <Button big>
                                         Subscribe
                                     </Button>
                                 </NavBtnLink>
